@@ -1,0 +1,17 @@
+services:
+  chemistry-lab:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      CHEM_LAB_DB_PATH: /app/data/chem_lab.db
+      # Configure AI settings through environment variables or a local .env file.
+      # CHEM_LAB_AI_API_KEY: ${CHEM_LAB_AI_API_KEY:-}
+      # CHEM_LAB_AI_BASE_URL: ${CHEM_LAB_AI_BASE_URL:-https://api.openai.com/v1}
+      # CHEM_LAB_AI_MODEL: ${CHEM_LAB_AI_MODEL:-gpt-4o-mini}
+    volumes:
+      - chemistry_lab_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  chemistry_lab_data:

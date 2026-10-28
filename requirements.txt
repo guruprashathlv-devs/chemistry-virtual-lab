@@ -1,0 +1,12 @@
+# Core web application
+streamlit>=1.40,<2
+pandas>=2.0
+numpy>=1.26
+matplotlib>=3.8
+
+# Chemistry and visualization
+rdkit>=2024.3
+py3Dmol>=2.0
+
+# PDF report generation
+reportlab>=4.0
